@@ -1,3 +1,3 @@
-echo PARSING
+echo PARSING ${1}
 
 exit 0
