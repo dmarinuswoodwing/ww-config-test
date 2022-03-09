@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+	<info>
+		<version>
+			<pluginVersion>1.4</pluginVersion>
+			<requiresAtLeast>2.6.1.550</requiresAtLeast>
+		</version>
+		<description>Trash Can</description>
+	</info>
+	<action>
+		<url>${pluginUrl}/index.html</url>
+		<icon16Url>${pluginUrl}/images/icon16.png</icon16Url>
+		<icon24Url>${pluginUrl}/images/icon24.png</icon24Url>
+
+		<userInterface>
+			<tab />
+		</userInterface>
+
+		<menuAssignments>
+			<menuAssignment id="applicationMenu" order="2" />
+			<menuAssignment id="toolBar" order="2" />
+			<menuAssignment id="assetContextMenu" order="2" />
+		</menuAssignments>
+
+		<requiredRoles>
+			<role>ROLE_CUSTOM_MOVE_TO_TRASHCAN</role>
+		</requiredRoles>
+
+		<messages>
+			<entries locale="en_US">
+				<entry key="button.label">Trash Can</entry>
+				<entry key="button.tooltip">Trash Can</entry>
+				<entry key="title">Trash Can</entry>
+				<entry key="text.files">Files</entry>
+				<entry key="text.areSure">Are you sure?</entry>
+				<entry key="text.selected">Selected</entry>
+				<entry key="app.superuser">Superuser mode</entry>
+				<entry key="app.selectUser">Select user</entry>
+				<entry key="app.downloadCsv">Download CSV of Last 5 deletes for all users</entry>
+				<entry key="app.restoreFolder">Recover Folder</entry>
+				<entry key="app.restoreAssets">Recover Selection</entry>
+				<entry key="app.selectedUser">Selected user:</entry>
+				<entry key="app.nothingFound">No files found to recover.</entry>
+				<entry key="app.subfolders">Include files in sub folders</entry>
+				<entry key="recover.title">You are about to recover</entry>
+				<entry key="recover.contains">Which contains</entry>
+				<entry key="button.recover">Recover</entry>
+				<entry key="button.cancel">Cancel</entry>
+				<entry key="progress.recovering">Recovering</entry>
+				<entry key="progress.message1">Please do not navigate away from this page until complete.</entry>
+				<entry key="csv.title">Download csv</entry>
+				<entry key="csv.message1">CSV created, please click the button below to download the file.</entry>
+				<entry key="csv.button">Download CSV file</entry>
+				<entry key="thumb.filename">Filename</entry>
+				<entry key="thumb.deletedOn">Deleted on</entry>
+				<entry key="thumb.path">Original path</entry>
+				<entry key="gallery.selectall">Select All</entry>
+
+			</entries>
+		</messages>
+	</action>
+	<config>
+		<property name="trash_folder">
+			<description>Path to trash can folder. No trailing slashes</description>
+			<value>/Trash</value>
+		</property>
+		<property name="deleted_on_field">
+			<description>Field to use for deleted on date. needs to be a date field in Assets</description>
+			<value>cf_deletedOn</value>
+		</property>
+		<property name="deleted_by_field">
+			<description>Field to use for deleted by</description>
+			<value>cf_deletedBy</value>
+		</property>
+		<property name="key">
+			<description>License key</description>
+			<value>vOVH6sdmpNWjRRIqCc7rdxs01lwHzfr3</value>
+		</property>
+		<property name="api">
+			<description>The api plugin that points to the backend tools</description>
+			<value>/plugins/move_to_trashcan_api</value>
+		</property>
+		<property name="highlight_background_colour">
+			<description>The colour of the buttons, should match brand highlight colour</description>
+			<value>#0095E0</value>
+		</property>
+		<property name="highlight_text_colour">
+			<description>The text colour of the buttons, should match brand highlight colour</description>
+			<value>#FFFFFF</value>
+		</property>
+	</config>
+</plugin>

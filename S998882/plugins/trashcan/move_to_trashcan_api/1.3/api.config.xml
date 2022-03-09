@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+  <info>
+    <version>
+      <pluginVersion>1.0</pluginVersion>
+      <requiresAtLeast>6.7.0.0</requiresAtLeast>
+    </version>
+    <description>API endport for the delete function in Warner panel plugin.</description>
+  </info>
+  <api>
+    <url>https://test.test/Prod</url>
+  </api>
+</plugin>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+  <info>
+    <version>
+      <pluginVersion>1.2</pluginVersion>
+      <requiresAtLeast>6.1.0.0</requiresAtLeast>
+    </version>
+    <description>Move files and folders into the Trash Can</description>
+  </info>
+  <action>
+    <url>${pluginUrl}/index.html</url>
+    <icon16Url>${pluginUrl}/icon16.png</icon16Url>
+    <icon24Url>${pluginUrl}/icon24.png</icon24Url>
+
+    <userInterface>
+      <dialog width="400" height="282"/>
+    </userInterface>
+
+    <menuAssignments>
+      <menuAssignment id="assetContextMenu" order="1"/>
+    </menuAssignments>
+
+    <requiredRoles>
+      <role>ROLE_CUSTOM_MOVE_TO_TRASHCAN</role>
+    </requiredRoles>
+
+    <messages>
+      <entries locale="en_US">
+        <entry key="title">Move to Trash Can</entry>
+        <entry key="button.label">Move to Trash Can</entry>
+        <entry key="button.tooltip">Move files and folders into a Trash Can.</entry>
+        <entry key="button_start">Move</entry>
+        <entry key="button_cancel">Cancel</entry>
+        <entry key="button_close">Close</entry>
+        <entry key="powered_by">Powered by</entry>
+        <entry key="recovery_message">Go to Trash Can</entry>
+        <entry key="asset_header">You are about to move {count} files.</entry>
+        <entry key="asset_message1">Confirm this action</entry>
+        <entry key="asset_message2">Files are placed in the Trash Can from where they can be recovered.</entry>
+        <entry key="asset_message3">Note that files might be automatically deleted at set time periods.</entry>
+        <entry key="asset_message4">Do you want to move folders to the Trash Can?</entry>
+        <entry key="folder_header">Which folder do you want to move to Trash Can?</entry>
+        <entry key="folder_message1">This folder and all subfolders</entry>
+        <entry key="folder_message2">Only subfolders</entry>
+        <entry key="folder_message3">Files are placed in the Trash Can from where they can be recovered.</entry>
+        <entry key="folder_message4">Note that files might be automatically deleted at set time periods.</entry>
+        <entry key="folder_message5">Go back to moving files into the Trash Can</entry>
+        <entry key="progress_header">Move in progress</entry>
+        <entry key="progress_message1">Your files are being moved to the Trash Can.</entry>
+        <entry key="progress_message2">This may take some time if there is a large number to process. Please do not attempt to delete again.</entry>
+        <entry key="progress_message3">You can now close this window whilst this happens.</entry>
+        <entry key="error_title">ERROR!</entry>
+        <entry key="error_message1">Can not connect to backend service. Please contact your administrator.</entry>
+        <entry key="error_message2">There was a problem during the delete process. Please contact your administrator.</entry>
+        <entry key="error_message3">There was a licensing problem. Please contact your administrator.</entry>
+        <entry key="error_message4">Your current trashcan settings prohibit you from deleting material that was not uploaded by you. Please removed these from your selection and try again.</entry>
+        <entry key="error_message5">You do not have access to the 'assetCreator' metadata field, And your trashcan setting 'global_delete_own_material_only' is set to true. Please contact your administrator.</entry>
+        <entry key="error_message6">You do not have the ability to delete folders. Please speak to your systems administrator if you feel you need to delete folders.</entry>
+      </entries>
+    </messages>
+  </action>
+  <config>
+    <property name="key">
+    <description>License key</description>
+      <value>vOVH6sdmpNWjRRIqCc7rdxs01lwHzfr3</value>
+    </property>
+    <property name="api">
+    <description>The api plugin that points to the backend tools</description>
+      <value>/plugins/move_to_trashcan_api</value>
+    </property> 
+    <property name="trashcan_plugin_url">
+    <description>The url of the Trash Can plugin for recovery of files</description>
+      <value>/plugin/trashcan</value>
+    </property>    
+    <property name="trash_folder">
+    <description>Path of Trash folder </description>
+      <value>/Trash</value>
+    </property>
+    <property name="users_folder">
+      <description>Path of Users folder</description>
+      <value>/Users</value>
+    </property>
+    <property name="highlight_background_colour">
+      <description>The colour of the buttons, should match brand highlight colour</description>
+      <value>#0095E0</value>
+    </property>
+    <property name="highlight_text_colour">
+      <description>The text colour of the buttons, should match brand highlight colour</description>
+      <value>#FFFFFF</value>
+    </property>
+    <property name="global_delete_own_material_only">
+      <description>By default users can only delete if they are the importer</description>
+      <value>true</value>
+    </property>
+   <property name="global_groups_allow_delete_non_own">
+      <description>Array of groups allowed to delete non owned assets</description>
+      <value>["Admin", "test", "test2","test3"]</value>
+    </property>
+    <property name="preventFolderDelete">
+      <description>Prevents deletion of folders</description>
+      <value>true</value>
+    </property>
+    <property name="global_groups_allow_folder_delete">
+     <description>Array of groups allowed to delete folders</description>
+      <value>["Admin"]</value>
+    </property>
+  </config>
+</plugin>
